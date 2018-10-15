@@ -1,0 +1,319 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+.shop {
+	width: 1226px;
+	height: 600px;
+	margin: 60px auto;
+	border-top: 1px solid black;
+	color: black;
+}
+
+.box {
+	padding: 20px;
+	margin-top: 50px;
+	float: left;
+	
+}
+.box_min{
+	position: relative;
+	
+}
+.show-image {
+	position: relative;
+	width: 360px;
+	height: 400px;
+	font-size: 0;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+
+.show-image img {
+	position: relative;
+	width: 360px;
+	height: 400px;
+}
+
+.filter {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 150px;
+	height: 150px;
+	background: rgba(0, 0, 0, 0.6);
+	cursor: move;
+	display: none;
+}
+
+.img-box {
+	padding: 10px;
+	margin-left: -20px;
+}
+.img-box img{
+	width: 60px;
+	height: 60px;
+}
+.img-box>li {
+	display: inline-block;
+	border: 1px solid transparent;
+	margin-left: 10px;
+}
+
+.img-box>li img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.img-box>li:hover,
+.img-box>li.active {
+	border: 1px solid red;
+}
+
+.show-big-image {
+	position: absolute;
+	left: 372px;
+	top: -400px;
+	width: 450px;
+	height: 450px;
+	overflow: hidden;
+	border: 1px solid #eee;
+	/*margin-top: 325px;
+	margin-left: 135px;*/
+	display: none;
+}
+
+.show-big-image img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1080px;
+	height: 1200px;
+}
+
+.content {
+	top: 150% !important;
+}
+
+.shop_info {
+	margin-top: 40px;
+	width: 700px;
+	margin-left: 40px;
+	float: left;
+}
+
+.shop_info h3 {
+	font-size: 30px;
+	line-height: 60px;
+}
+
+.shop_info .title2 {
+	font-size: 15px;
+	color: orange;
+}
+
+.shop_price {
+	width: 700px;
+	height: 80px;
+	background: rgba(25, 25, 25, 0.1);
+}
+
+.shop_price .sj {
+	font-size: 20px;
+	margin-left: 10px;
+	line-height: 50px;
+}
+
+.shop_price .sj span {
+	font-size: 30px;
+	color: red;
+	margin-left: 10px;
+}
+
+.shop_price .sj s {
+	font-size: 17px;
+	margin-left: 25px;
+}
+
+.shop_price .vip {
+	font-size: 15px;
+	color: gray;
+	margin-left: 10px;
+}
+
+.sl {
+	width: 700px;
+	height: 50px;
+	text-align: center;
+	border: 1px dashed gainsboro;
+	margin-top: 20px;
+	line-height: 50px;
+}
+
+.lj {
+	width: 100px;
+	font-size: 16px;
+	margin-left: 70px;
+	color: gray;
+}
+
+.lj:nth-of-type(1) {
+	margin-left: 0px;
+}
+
+.color {
+	margin-top: 20px;
+}
+
+.color p {
+	float: left;
+	line-height: 35px;
+}
+
+.color button {
+	width: 70px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	border: 1px solid gray;
+	background: #FFFFFF;
+	margin-left: 10px;
+	
+	
+}
+button{
+
+outline:none !important;
+box-shadow: none;
+}
+.shop_info .one{
+	border: 1px solid red;
+}
+
+.size {
+	margin-top: 20px;
+}
+
+.size p {
+	float: left;
+	line-height: 35px;
+}
+
+.size button {
+	width: 70px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	border: 1px solid gray;
+	background: #FFFFFF;
+	margin-left: 10px;
+}
+
+.num {
+	width: 700px;
+	height: 125px;
+	background: gainsboro;
+	margin-top: 10px;
+}
+
+.num p {
+	float: left;
+	font-size: 20px;
+	color: gray;
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+.num input {
+	width: 50px;
+	margin-top: 25px;
+	height: 25px;
+	border: 1px solid red;
+}
+
+.num span {
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 15px;
+	color: red;
+}
+
+.num button {
+	width: 150px;
+	height: 35px;
+	display: inline-block;
+	margin-left: 65px;
+	margin-top: 25px;
+	background: rgba(255, 237, 231, 1);
+	border: 1px solid red;
+	color: red;
+	font-size: 15px;
+}
+
+.num .car {
+	background: red;
+	color: white;
+	cursor: pointer;
+	position: relative;
+}
+.car_icon{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-size: 15px;
+}
+/*
+ 侧边栏
+ 
+ */
+
+
+.sidebar{
+	text-align: center;
+	width: 80px;
+	height:300px;
+	position: absolute;
+	right: 0;
+	top:520px;
+}
+.sidebar ul li{
+	cursor: pointer;
+	height: 80px;
+	border: 1px solid gainsboro;
+	position: relative;
+}
+
+.sidebar ul li i{
+	display: inline-block;
+		margin-top: 10px;
+	font-size: 25px !important;
+	color: gray;
+	
+}
+.sidebar ul li i:hover{
+	color: orangered;
+}
+.sidebar ul li p{
+	color:gray ;
+	line-height: 25px;
+}
+.sidebar ul li p:hover{
+	color: orangered;
+}
+.sidebar ul li span{
+	display: inline-block;
+	width: 15px;
+	height: 14px;
+	border-radius:25% ;
+	background: red;
+	color: #fff;
+	font-size: 8px;
+	position: absolute;
+	top: 7px;
+}
