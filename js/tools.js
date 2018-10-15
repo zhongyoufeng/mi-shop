@@ -72,7 +72,6 @@ function addUser(key, user, callBack) {
 	users.push(user);
 	// 更新本地数据
 	localStorage[key] = JSON.stringify(users);
-	// 数据存储成功之后调用回调函数
 	if(callBack) {
 		callBack();
 	}

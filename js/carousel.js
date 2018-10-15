@@ -3,7 +3,6 @@
  * 功能：轮播js
  */
 (function carousel() {
-// 获取页面元素
 var oBanner  = document.getElementsByClassName('banner')[0];
 var oPrev    = document.getElementsByClassName('prev')[0];
 var oNext    = document.getElementsByClassName('next')[0];

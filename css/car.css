@@ -75,14 +75,15 @@
 
 .sum {
 	width: 1225px;
-	height: 80px;
+	height: 50px;
+	border-top: 30px solid #F5F5F5;
 }
 
 .sum_left {
 	font-size: 15px;
 	float: left;
 	margin-left: 75px;
-	margin-top: 30px;
+	line-height: 50px;
 }
 
 .sum_left a:hover {
@@ -102,16 +103,19 @@
 }
 
 .sum_right {
-	margin-right: 52px;
+	
 	float: right;
 }
 
 .sum h4 {
-	width: 200px;
+	width: 130px;
 	float: left;
-	font-size: 22px;
+	font-size: 25px;
 	color: #ff6700;
-	
+	line-height: 50px;
+	margin-left: 50px;
+	margin-top: 0px;
+	font-weight: normal;
 }
 
 .sum h4 i {
@@ -120,17 +124,17 @@
 }
 
 .sum .zj {
+	font-size: 15px;
 	float: left;
-	width: 100px;
-	height: 40px;
+	width: 200px;
+	height: 50px;
 	background: #ff6700;
 	color: #fff;
 	text-align: center;
-	line-height: 40px;
+	line-height: 50px;
 	border: none;
-	border-radius: 8px;
 	margin-left: 110px;
-	margin-top: 17px;
+	
 }
 
 button {

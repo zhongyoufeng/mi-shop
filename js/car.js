@@ -105,15 +105,13 @@ var car = (function() {
 					var s_num = shop[target.index].num;
 					var v_input = document.querySelectorAll('.inp_v');
 					var xj = document.querySelectorAll('.xj');
-
 					v_input[target.index].value--;
 					shop[target.index].num--;
 					localStorage.shops = JSON.stringify(shop);
-					xj_sum -= 3660;
 					if(v_input[target.index].value <= 1) {
 						v_input[target.index].value = 1;
-						xj[target.index].innerHTML = '￥' + 3660;
 						shop[target.index].num = 1;
+						localStorage.shops = JSON.stringify(shop);
 					}
 					var dj = shop[target.index].prcie.split('￥')[1];
 					var xj_sum = v_input[target.index].value * dj;
@@ -139,14 +137,12 @@ var car = (function() {
 					v_input[target.index].value++;
 					if(v_input[target.index].value >= 10) {
 						v_input[target.index].value = 10;
-						xj[target.index].innerHTML = '￥' + 3660;
-						s_num = 10;
+					shop[target.index].num=10;
+					localStorage.shops = JSON.stringify(shop);
 					}
 					var dj = shop[target.index].prcie.split('￥')[1];
-					s_num++;
-
-					shop[target.index].num++
-						localStorage.shops = JSON.stringify(shop);
+					shop[target.index].num++;
+					localStorage.shops = JSON.stringify(shop);
 					var xj_sum = v_input[target.index].value * dj;
 					xj[target.index].innerHTML = '￥' + xj_sum;
 					var allsum = 0;
