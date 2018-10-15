@@ -95,6 +95,12 @@ var addshop = (function() {
 	var car_icon = document.querySelector('.car_icon');
 	var car_num = document.querySelector('.car_num')
 	var box = new Move('.car_icon');
+	var $confirm = document.querySelector('.confirm');
+	var $close = document.querySelector('.close');
+	var $cover = document.querySelector('.cover');
+	var $box = document.querySelector('.cover_box');
+	var $title = document.querySelector('.cover_title');
+	var sure = document.querySelector('.sure')
 	var count = 0;
 	return {
 		init() {
@@ -124,11 +130,24 @@ var addshop = (function() {
 					"num": shopnum.value,
 					'shop_img': shop_img
 				};
-				that.judge("shops", "shopname", shopnum.value, function(status) {
-					that.add("shops", shop, function() {
-						shopcount.innerHTML = '购物车' + '(' + Number(count + 1) + ')';
-						car_num.innerHTML = count + 1;
-					})
+				that.judge("shops", "shopname", shopname.innerHTML, function(status) {
+					if(status == 0) {
+						$cover.style.display = 'block';
+						sure.innerHTML = '该商品已在购物车等候亲了';
+						$confirm.innerHTML = '购物车查看';
+						$confirm.onclick = function() {
+							location.href = 'car.html';
+						}
+						$close.onclick = function() {
+							$cover.style.display = 'none';
+						}
+					} else if(status == 1) {
+						that.add("shops", shop, function() {
+							shopcount.innerHTML = '购物车' + '(' + Number(count + 1) + ')';
+							car_num.innerHTML = count + 1;
+						})
+
+					}
 
 				})
 				that.fade();
@@ -171,7 +190,6 @@ var addshop = (function() {
 				return;
 			}
 			var shops = JSON.parse(localStorage[key]);
-			//默认用户不存在
 			var tag = false;
 			for(var i = 0; i < shops.length; i++) {
 				if(shops[i][gist] === value) {

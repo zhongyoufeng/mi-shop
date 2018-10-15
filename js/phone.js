@@ -44,6 +44,7 @@ var add = (function() {
 	var $cover = document.querySelector('.cover');
 	var $box = document.querySelector('.cover_box');
 	var $title = document.querySelector('.cover_title');
+	var sure=document.querySelector('.sure')
 	var count = localStorage.shops;
 	if(count) {
 		count = JSON.parse(count);
@@ -77,14 +78,27 @@ var add = (function() {
 						"num": 1,
 						'shop_img': shop_img
 					};
-					that.judge("shops", "shopname", 1, function(status) {
-						that.add("shops", shop, function() {
-							car_num.innerHTML = count;
-						})
+					that.judge("shops", "shopname", title_v, function(status) {
+						if(status == 0) {
+							$cover.style.display = 'block';
+							sure.innerHTML = '该商品已在购物车等候亲了';
+							$confirm.innerHTML = '购物车查看';
+							$confirm.onclick = function() {
+								location.href = 'car.html';
+							}
+							$close.onclick = function() {
+								$cover.style.display = 'none';
+							}
+						} else if(status == 1) {
+							that.add("shops", shop, function() {
+								car_num.innerHTML = count;
+								 $cover.style.display='block';
+								 sure.innerHTML = '恭喜您成功添加到购物车!';
+							})
+
+						}
 
 					})
-					$cover.style.display='block';
-					
 				} else if(target.className == 'add_car2') {
 					e.preventDefault();
 					count++;
@@ -101,13 +115,29 @@ var add = (function() {
 						"num": 1,
 						'shop_img': shop_img
 					};
-					that.judge("shops", "shopname", 1, function(status) {
-						that.add("shops", shop, function() {
-							car_num.innerHTML = count;
-						})
+					that.judge("shops", "shopname", title_v, function(status) {
+						
+						if(status == 0) {
+							$cover.style.display = 'block';
+							sure.innerHTML = '该商品已在购物车等候亲了';
+							$confirm.innerHTML = '购物车查看';
+							$confirm.onclick = function() {
+								location.href = 'car.html';
+							}
+							$close.onclick = function() {
+								$cover.style.display = 'none';
+							}
+						} else if(status == 1) {
+							that.add("shops", shop, function() {
+								car_num.innerHTML = count;
+								 $cover.style.display='block';
+								  sure.innerHTML = '恭喜您成功添加到购物车！';
+							})
 
+						}
+						
 					})
-                           	$cover.style.display='block';
+                      
 				} else if(target.className == 'p_detail') {
 					
 					target.style.transform = 'scale(1.05)';

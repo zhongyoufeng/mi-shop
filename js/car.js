@@ -19,6 +19,7 @@ var car = (function() {
 	var add_car = document.querySelectorAll('.add_car');
 	var $li = document.querySelectorAll('.car_list li');
 	var car_more = document.querySelector('.car_more');
+	var sure = document.querySelector('.sure')
 
 	var arr = [];
 	var arr2 = [];
@@ -43,6 +44,8 @@ var car = (function() {
 				}
 				if(target.className == 'btn-del') {
 					$cover.style.display = 'block';
+						sure.innerHTML = '您确定删除该商品吗？';
+							$confirm.innerHTML = '确定';
 					$confirm.onclick = function() {
 						var delshop = shop.splice(target.parentNode.firstChild.index, 1);
 						localStorage.shops = JSON.stringify(shop);
@@ -201,10 +204,23 @@ var car = (function() {
 						"num": 1,
 						'shop_img': car_img_src
 					};
-					that.judge("shops", "shopname", 1, function(status) {
-						that.add("shops", shop, function() {
-							location.href = 'car.html'
-						})
+					that.judge("shops", "shopname", sj_name_v, function(status) {
+						if(status == 0) {
+							$cover.style.display = 'block';
+							sure.innerHTML = '该商品已在购物车等候亲了';
+							$confirm.innerHTML = '购物车查看';
+							$confirm.onclick = function() {
+								location.href = 'car.html';
+							}
+							$close.onclick = function() {
+								$cover.style.display = 'none';
+							}
+						} else if(status == 1) {
+							that.add("shops", shop, function() {
+								location.href = 'car.html'
+							})
+
+						}
 
 					})
 
