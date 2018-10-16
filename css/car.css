@@ -64,7 +64,7 @@
 	width: 1226px;
 	margin-right: auto;
 	margin-left: auto;
-	min-height: 300px;
+	min-height: 230px;
 	background: #FFFFFF;
 	position: relative;
 }
@@ -103,7 +103,6 @@
 }
 
 .sum_right {
-	
 	float: right;
 }
 
@@ -134,7 +133,6 @@
 	line-height: 50px;
 	border: none;
 	margin-left: 110px;
-	
 }
 
 button {
@@ -175,7 +173,7 @@ button {
 
 .shop-car th:nth-of-type(3) {
 	float: left;
-	width: 350px;
+	width: 314px;
 }
 
 .shop-car th:nth-of-type(4) {
@@ -194,8 +192,8 @@ button {
 }
 
 .shop-car th:nth-of-type(6) {
-	width: 120px;
-	margin-right: 30px;
+	width:158px;
+	margin-right: -28px;
 	text-align: center;
 }
 
@@ -213,13 +211,36 @@ button {
 	color: white;
 	border: none;
 }
-
-.Checkbox {
-	width: 18px;
-	height: 18px;
-	background: #fff;
-	color: #fff;
-	display: inline-block;
+input[type='checkbox']{
+	  width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-appearance:none;
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+    outline: none;
+    margin-left: -40px;
+}
+.checkBox  input[type='checkbox']{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    -webkit-appearance:none;
+    border: 1px solid #c9c9c9;
+    border-radius: 2px;
+    outline: none;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    margin-left: 0px;
+}
+.checkBox input[type=checkbox]:checked{
+   background: url("../images/gou.jpg") no-repeat center;
+   background-size:20px 20px ;
+}
+.check2{
+   background: url("../images/gou.jpg") no-repeat center;
+   background-size:0px 0px ;
 }
 
 .tbox {
@@ -410,36 +431,38 @@ button {
 }
 
 .car_more {
-	
 	width: 1225px;
-	margin:40px auto;
+	margin: 40px auto;
 }
 
 .more_title h3 {
-     position: relative;
-    margin: 0;
-    height: 50px;
-    font-size: 30px;
-    font-weight: 400;
-    color: #757575;
-    border-top: 1px solid #e0e0e0;
+	position: relative;
+	margin: 0;
+	height: 50px;
+	font-size: 30px;
+	font-weight: 400;
+	color: #757575;
+	border-top: 1px solid #e0e0e0;
 }
-.more_title h3 span{
+
+.more_title h3 span {
 	position: absolute;
-    top: -20px;
-    left: 372px;
-    height: 40px;
-    width: 482px;
-    line-height: 40px;
-    text-align: center;
-    display: block;
-    background-color: #f5f5f5;
+	top: -20px;
+	left: 372px;
+	height: 40px;
+	width: 482px;
+	line-height: 40px;
+	text-align: center;
+	display: block;
+	background-color: #f5f5f5;
 }
-.car_list{
+
+.car_list {
 	width: 1225px;
 	margin: 0 auto;
 }
-.car_list ul li{
+
+.car_list ul li {
 	width: 234px;
 	height: 300px;
 	background: #FFFFFF;
@@ -447,34 +470,36 @@ button {
 	margin-right: 11px;
 	float: left;
 	margin-top: 11px;
-	font-size:15px ;
+	font-size: 15px;
 }
 
-.car_list ul li img{
+.car_list ul li img {
 	margin: 40px auto 0px auto;
-	height:100px;
+	height: 100px;
 	width: 140px;
 }
-.car_list ul li dl{
-	margin-right:15px ;
+
+.car_list ul li dl {
+	margin-right: 15px;
 }
-.sj_name{
-	
+
+.sj_name {
 	margin-top: 15px;
-	
 }
-.sj_price{
+
+.sj_price {
 	color: #ff6700;
 	margin-top: 15px;
 }
-.sj_pl{
+
+.sj_pl {
 	margin-top: 10px;
 	color: gray;
 	text-align: center;
 	position: relative;
-	
 }
-.sj_pl a{
+
+.sj_pl a {
 	display: none;
 	color: #fff;
 	background: #FF6700;

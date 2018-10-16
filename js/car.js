@@ -44,8 +44,8 @@ var car = (function() {
 				}
 				if(target.className == 'btn-del') {
 					$cover.style.display = 'block';
-						sure.innerHTML = '您确定删除该商品吗？';
-							$confirm.innerHTML = '确定';
+					sure.innerHTML = '您确定删除该商品吗？';
+					$confirm.innerHTML = '确定';
 					$confirm.onclick = function() {
 						var delshop = shop.splice(target.parentNode.firstChild.index, 1);
 						localStorage.shops = JSON.stringify(shop);
@@ -99,6 +99,7 @@ var car = (function() {
 				if(target.className == 'jian') {
 					var shop = JSON.parse(localStorage.shops);
 					var inp_v = document.querySelectorAll('.jian');
+					
 					for(var i = 0; i < inp_v.length; i++) {
 						inp_v[i].index = i;
 					}
@@ -137,8 +138,8 @@ var car = (function() {
 					v_input[target.index].value++;
 					if(v_input[target.index].value >= 10) {
 						v_input[target.index].value = 10;
-					shop[target.index].num=10;
-					localStorage.shops = JSON.stringify(shop);
+						shop[target.index].num = 10;
+						localStorage.shops = JSON.stringify(shop);
 					}
 					var dj = shop[target.index].prcie.split('￥')[1];
 					shop[target.index].num++;
@@ -154,22 +155,37 @@ var car = (function() {
 						return allsum += Number(item);
 					})
 					sum.innerHTML = allsum;
+				}else if(target.className=='check2'){
+						var checkall = document.querySelectorAll('.check2');
+						for (var i=0;i<checkall.length;i++) {
+						checkall[i].index=i;
+					}
+					if (target.checked==true) {
+						checkall[target.index].style.backgroundSize='20px 20px';
+					}else if(target.checked==false){
+						checkall[target.index].style.backgroundSize='0px 0px';
+					}
+				
+					
+					
 				}
 
 			});
 			check1.onclick = function() {
-				var checkall = document.querySelectorAll('.Checkbox');
+				var checkall = document.querySelectorAll('.check2');
+				console.log(check1.checked)
 				if(check1.checked == true) {
 					for(var i = 0; i < checkall.length; i++) {
-						checkall[i].checked = true;
+						checkall[i].style.backgroundSize = '20px 20px';
 					}
-				} else {
+				} else if(check1.checked == false) {
 					for(var i = 0; i < checkall.length; i++) {
-						checkall[i].checked = false;
+						checkall[i].style.backgroundSize = '0px 0px';
 					}
 				}
 
 			};
+			
 			for(let i = 0; i < $li.length; i++) {
 				$li[i].onmouseenter = function() {
 					add_car[i].style.display = 'block';
@@ -236,7 +252,7 @@ var car = (function() {
 				var shop = JSON.parse(localStorage.shops);
 				for(var i = 0; i < shop.length; i++) {
 					arr.push(`<tr>
-						        <td><input type="checkbox" class="Checkbox" id="check1">
+						        <td><label class="check"><input type="checkbox" class="check2"></label>
 									</td>
 									<td><img src="${shop[i].shop_img}"/></td>
 								<td>${shop[i].shopname}</td>

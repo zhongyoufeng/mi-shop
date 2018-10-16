@@ -601,7 +601,6 @@ ul.idots-box li.active {
 	display: flex;
 	margin-bottom: 26px;
 	display: -webkit-flex;
-
 	justify-content: space-between;
 	position: relative;
 }
