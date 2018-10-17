@@ -388,23 +388,6 @@
 		<!-- js部分 -->
        <script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/car.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			var cookie = new OperationCookie();
-			var username = cookie.getItem('username');
-			var user = document.querySelector('.login_res');
-			if(username) {
-			
-				user.href = '#';
-				user.innerHTML = '欢迎您：' + username + " &nbsp; | &nbsp;<a href='#' class='back_login'>退出</a>";
-				var back_login = document.querySelector('.back_login');
-				back_login.onclick = function() {
-					document.cookie = `username=${username};max-age=0`;
-					location.href = 'index.html';
-
-				}
-
-			}
-		</script>
 	</body>
 
 </html>

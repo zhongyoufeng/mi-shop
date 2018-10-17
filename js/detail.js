@@ -301,3 +301,18 @@ var insert = (function() {
 	}
 }())
 insert.init();
+var cookie = new OperationCookie();
+var username = cookie.getItem('username');
+if(username) {
+	var user = document.querySelector('.navbar-user>a');
+	var reg = document.querySelector('.reg')
+	user.href = '#';
+	user.innerHTML = '欢迎您：' + username;
+	reg.href = '#';
+	reg.innerHTML = '退出';
+	reg.onclick = function() {
+		document.cookie = `username='${username};max-age=0'`;
+		location.href = 'index.html';
+	}
+
+}

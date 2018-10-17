@@ -38,13 +38,13 @@ var add = (function() {
 	var p_detail = document.querySelectorAll('.p_detail');
 	var p_detail2 = document.querySelectorAll('.p_detail2');
 	var p_info = document.querySelectorAll('.p_info');
-	var fo_info=document.querySelectorAll('.fo_info');
+	var fo_info = document.querySelectorAll('.fo_info');
 	var $confirm = document.querySelector('.confirm');
 	var $close = document.querySelector('.close');
 	var $cover = document.querySelector('.cover');
 	var $box = document.querySelector('.cover_box');
 	var $title = document.querySelector('.cover_title');
-	var sure=document.querySelector('.sure')
+	var sure = document.querySelector('.sure')
 	var count = localStorage.shops;
 	if(count) {
 		count = JSON.parse(count);
@@ -92,8 +92,8 @@ var add = (function() {
 						} else if(status == 1) {
 							that.add("shops", shop, function() {
 								car_num.innerHTML = count;
-								 $cover.style.display='block';
-								 sure.innerHTML = '恭喜您成功添加到购物车!';
+								$cover.style.display = 'block';
+								sure.innerHTML = '恭喜您成功添加到购物车!';
 							})
 
 						}
@@ -116,7 +116,7 @@ var add = (function() {
 						'shop_img': shop_img
 					};
 					that.judge("shops", "shopname", title_v, function(status) {
-						
+
 						if(status == 0) {
 							$cover.style.display = 'block';
 							sure.innerHTML = '该商品已在购物车等候亲了';
@@ -130,16 +130,16 @@ var add = (function() {
 						} else if(status == 1) {
 							that.add("shops", shop, function() {
 								car_num.innerHTML = count;
-								 $cover.style.display='block';
-								  sure.innerHTML = '恭喜您成功添加到购物车！';
+								$cover.style.display = 'block';
+								sure.innerHTML = '恭喜您成功添加到购物车！';
 							})
 
 						}
-						
+
 					})
-                      
+
 				} else if(target.className == 'p_detail') {
-					
+
 					target.style.transform = 'scale(1.05)';
 					for(var j = 0; j < p_detail.length; j++) {
 						p_detail[j].l = j;
@@ -154,7 +154,7 @@ var add = (function() {
 					cookie.setItem("pprice", price_v, 1);
 					cookie.setItem("pimg", shop_img, 1);
 					cookie.setItem("pinfo", pinfo_v, 1);
-				}else if(target.className=='p_detail2'){
+				} else if(target.className == 'p_detail2') {
 					target.style.transform = 'scale(1.05)';
 					for(var j = 0; j < p_detail2.length; j++) {
 						p_detail2[j].l = j;
@@ -171,12 +171,12 @@ var add = (function() {
 					cookie.setItem("pinfo", pinfo_v, 1);
 				}
 			};
-			
-			$confirm.onclick=function(){
-				location.href='car.html';
+
+			$confirm.onclick = function() {
+				location.href = 'car.html';
 			};
-			$close.onclick=function(){
-				$cover.style.display='none';
+			$close.onclick = function() {
+				$cover.style.display = 'none';
 			}
 
 		},
@@ -219,3 +219,18 @@ var add = (function() {
 	}
 }())
 add.init();
+var cookie = new OperationCookie();
+var username = cookie.getItem('username');
+if(username) {
+	var user = document.querySelector('.navbar-user>a');
+	var reg = document.querySelector('.reg')
+	user.href = '#';
+	user.innerHTML = '欢迎您：' + username;
+	reg.href = '#';
+	reg.innerHTML = '退出';
+	reg.onclick = function() {
+		document.cookie = `username='${username};max-age=0'`;
+		location.href = 'index.html';
+	}
+
+}

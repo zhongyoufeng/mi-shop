@@ -116,17 +116,17 @@ var addshop = (function() {
 		event() {
 			var that = this;
 			btn.onclick = function() {
-				var shop_img=document.querySelector('.img-box img').src;
+				var shop_img = document.querySelector('.img-box img').src;
 				count++;
 				var shop = {
 					"shopname": shopname.innerHTML,
 					"prcie": shopprice.innerHTML,
 					"num": shopnum.value,
-					'shop_img':shop_img
+					'shop_img': shop_img
 				};
 				that.judge("shops", "shopname", shopnum.value, function(status) {
 					that.add("shops", shop, function() {
-						shopcount.innerHTML = '购物车' + '(' + Number(count+1)+ ')';
+						shopcount.innerHTML = '购物车' + '(' + Number(count + 1) + ')';
 						car_num.innerHTML = count + 1;
 					})
 
@@ -192,7 +192,7 @@ var check = (function() {
 	var color = document.querySelector('.color');
 	var size_btn = document.querySelectorAll('.size button');
 	var size = document.querySelector('.size');
-	
+
 	return {
 		init() {
 			for(var i = 0; i < color_btn.length; i++) {
@@ -244,3 +244,19 @@ var check = (function() {
 
 }())
 check.init();
+
+var cookie = new OperationCookie();
+var username = cookie.getItem('username');
+if(username) {
+	var user = document.querySelector('.navbar-user>a');
+	var reg = document.querySelector('.reg')
+	user.href = '#';
+	user.innerHTML = '欢迎您：' + username;
+	reg.href = '#';
+	reg.innerHTML = '退出';
+	reg.onclick = function() {
+		document.cookie = `username='${username};max-age=0'`;
+		location.href = 'index.html';
+	}
+
+}
